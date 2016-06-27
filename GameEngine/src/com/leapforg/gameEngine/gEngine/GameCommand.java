@@ -5,13 +5,20 @@
  */
 package com.leapforg.gameEngine.gEngine;
 
+import com.leapforg.gameEngine.entity.Bag;
 import com.leapforg.gameEngine.entity.Player;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
  * @author chira
  */
 public abstract class GameCommand {
-    public abstract void execute(Player player, String[] tokens);
+    protected String[] items = new String[]{"Gun","Diamond","Pencil","enemy","Rock","Toy","Gold"};
+    
+    Scanner input = new Scanner(System.in);
+    public abstract void execute(Player player, String[] tokens,ArrayList<Bag> itemList);
+    
     
 }

@@ -5,6 +5,7 @@
  */
 package com.leapforg.gameEngine;
 
+import com.leapforg.gameEngine.entity.Bag;
 import com.leapforg.gameEngine.entity.Player;
 import com.leapforg.gameEngine.gEngine.GameCommand;
 import com.leapforg.gameEngine.gEngine.GameFactory;
@@ -12,6 +13,8 @@ import com.leapforg.gameEngine.gEngine.MoveCommand;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
@@ -23,24 +26,29 @@ public class Program {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        menu();
+        ArrayList<Bag> itemList = new ArrayList<>();
        try{
         
         
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        
+       
         System.out.println("Enter user name ");
         String name = reader.readLine();
-        Player player = new Player(name);
+        int gold = 0;
+        Player player = new Player(name,gold);
         while(true){
-        System.out.println("Enter Command");
-           String[] tokens = reader.readLine().split(" ");
-           
+            
+            System.out.println("Enter Command");
+            String[] tokens = reader.readLine().split(" ");
+            
             GameCommand gc = GameFactory.get(tokens[0]);
            
            
            
            if(gc!=null){
-               System.out.println("ss");
-               gc.execute(player, tokens);
+               gc.execute(player, tokens,itemList);
            }
            else{
                System.out.println("The command you entered is " + tokens[0]);
@@ -53,6 +61,11 @@ public class Program {
            System.out.println(ioe.getMessage());
        }
     
+    }
+    public static void menu(){
+        System.out.println("Welcome to text based Game(Beta Version) ");
+        System.out.println("You can us Following commands Move (Back/Forward/Left/Right), Shoot, Drop <item>, Pick <item>, Show Bag, Run");
+        System.out.println("Enjoy the game!!");
     }
     
 }

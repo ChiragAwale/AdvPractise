@@ -5,7 +5,9 @@
  */
 package com.leapforg.gameEngine.gEngine;
 
+import com.leapforg.gameEngine.entity.Bag;
 import com.leapforg.gameEngine.entity.Player;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,10 +16,20 @@ import com.leapforg.gameEngine.entity.Player;
 public class DropCommand extends GameCommand {
 
     @Override
-    public void execute(Player player, String[] tokens) {
-        System.out.println(player.getUserName()+" dropped ");
-    
+    public void execute(Player player, String[] tokens, ArrayList<Bag> itemList) {
+      int check = 0;
+        for (Bag b : itemList) {
+
+            if (tokens[1].equalsIgnoreCase(b.getItem())) {
+                System.out.println(tokens[1] + " Dropped");
+                itemList.remove(b);
+                check = 1;
+            } 
+        }
+        if(check!=1){
+            System.out.println("Item Not Found");
+        }
+
     }
-    
-    
+
 }

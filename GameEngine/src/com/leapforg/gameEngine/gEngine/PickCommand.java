@@ -5,19 +5,28 @@
  */
 package com.leapforg.gameEngine.gEngine;
 
+import com.leapforg.gameEngine.entity.Bag;
 import com.leapforg.gameEngine.entity.Player;
+import java.util.ArrayList;
 
 /**
  *
  * @author chira
  */
-public class PickCommand extends GameCommand{
+public class PickCommand extends GameCommand {
 
     @Override
-    public void execute(Player player, String[] tokens) {
+    public void execute(Player player, String[] tokens, ArrayList<Bag> itemList) {
 
-    
+        if ((itemList.size()) <= 2) {
+            Bag bag = new Bag();
+            bag.setItem(tokens[1]);
+            itemList.add(bag);
+            System.out.println(tokens[1] + " added to bag");
+
+        } else {
+            System.out.println("Bag Full. Please Try Dropping Items");
+        }
+
     }
-    
-    
 }

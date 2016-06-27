@@ -16,7 +16,16 @@ public class GameFactory {
             return new MoveCommand();
         } else if (cmd.equalsIgnoreCase("drop")) {
             return new DropCommand();
-        } else {
+        }else if (cmd.equalsIgnoreCase("pick")) {
+            return new PickCommand();
+        }else if (cmd.equalsIgnoreCase("show")) {
+            return new ShowCommand();
+        }else if (cmd.equalsIgnoreCase("shoot")) {
+            return new ShootCommand();
+        }else if (cmd.equalsIgnoreCase("run")) {
+            return new RunCommand();
+        }
+        else {
             return null;
         }
 
