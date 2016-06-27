@@ -24,6 +24,8 @@ public class GameFactory {
             return new ShootCommand();
         }else if (cmd.equalsIgnoreCase("run")) {
             return new RunCommand();
+        }else if (cmd.equalsIgnoreCase("exit")) {
+            return new ExitCommand();
         }
         else {
             return null;
