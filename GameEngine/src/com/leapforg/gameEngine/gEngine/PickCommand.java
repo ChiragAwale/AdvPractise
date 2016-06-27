@@ -17,16 +17,19 @@ public class PickCommand extends GameCommand {
 
     @Override
     public void execute(Player player, String[] tokens, ArrayList<Bag> itemList) {
+        if (tokens.length == 2) {
+            if ((itemList.size()) <= 2) {
+                Bag bag = new Bag();
+                bag.setItem(tokens[1]);
+                itemList.add(bag);
+                System.out.println(tokens[1] + " added to bag");
 
-        if ((itemList.size()) <= 2) {
-            Bag bag = new Bag();
-            bag.setItem(tokens[1]);
-            itemList.add(bag);
-            System.out.println(tokens[1] + " added to bag");
+            } else {
+                System.out.println("Bag Full. Please Try Dropping Items");
+            }
 
         } else {
-            System.out.println("Bag Full. Please Try Dropping Items");
+            System.out.println("Error: Partial Command Entry. Please Try Again");
         }
-
     }
 }

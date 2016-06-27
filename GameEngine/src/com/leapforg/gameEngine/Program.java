@@ -36,7 +36,7 @@ public class Program {
        
         System.out.println("Enter user name ");
         String name = reader.readLine();
-        int gold = 0;
+        int gold = 200;
         Player player = new Player(name,gold);
         while(true){
             
@@ -65,6 +65,7 @@ public class Program {
     public static void menu(){
         System.out.println("Welcome to text based Game(Beta Version) ");
         System.out.println("You can us Following commands Move (Back/Forward/Left/Right), Shoot, Drop <item>, Pick <item>, Show Bag, Run");
+        System.out.println("You have been given $200. If you run away from enemy, you loose $200 each time. You need $200 to run away.");
         System.out.println("Enjoy the game!!");
     }
     
