@@ -13,18 +13,11 @@ import java.util.ArrayList;
  *
  * @author chira
  */
-public class ShowCommand extends GameCommand {
+public class ExitCommand extends GameCommand{
 
     @Override
     public void execute(Player player, String[] tokens, ArrayList<Bag> itemList) {
-        System.out.println("Your Bag Contains Following Objects");
-        int i = 0;
-        for(Bag bag: itemList){
-            i = i + 1;
-            System.out.println(i+" "+bag.getItem());
-        }
-        System.out.println("Gold : " + player.getGold());
+        System.exit(0);
     }
-    
     
 }

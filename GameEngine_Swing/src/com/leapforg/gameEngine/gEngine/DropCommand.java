@@ -11,20 +11,25 @@ import java.util.ArrayList;
 
 /**
  *
- * @author chira
+ * @author chirag
  */
-public class ShowCommand extends GameCommand {
+public class DropCommand extends GameCommand {
 
     @Override
     public void execute(Player player, String[] tokens, ArrayList<Bag> itemList) {
-        System.out.println("Your Bag Contains Following Objects");
-        int i = 0;
-        for(Bag bag: itemList){
-            i = i + 1;
-            System.out.println(i+" "+bag.getItem());
+      int check = 0;
+        for (Bag b : itemList) {
+
+            if (tokens[1].equalsIgnoreCase(b.getItem())) {
+                System.out.println(tokens[1] + " Dropped");
+                itemList.remove(b);
+                check = 1;
+            } 
         }
-        System.out.println("Gold : " + player.getGold());
+        if(check!=1){
+            System.out.println("Item Not Found");
+        }
+
     }
-    
-    
+
 }

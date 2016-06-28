@@ -21,7 +21,7 @@ public class ShowCommand extends GameCommand {
         int i = 0;
         for(Bag bag: itemList){
             i = i + 1;
-            System.out.println(i+" "+bag.getItem());
+            System.out.println(i+bag.getItem());
         }
         System.out.println("Gold : " + player.getGold());
     }

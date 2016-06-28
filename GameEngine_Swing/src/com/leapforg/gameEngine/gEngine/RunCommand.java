@@ -13,18 +13,19 @@ import java.util.ArrayList;
  *
  * @author chira
  */
-public class ShowCommand extends GameCommand {
+public class RunCommand extends GameCommand{
 
     @Override
     public void execute(Player player, String[] tokens, ArrayList<Bag> itemList) {
-        System.out.println("Your Bag Contains Following Objects");
-        int i = 0;
-        for(Bag bag: itemList){
-            i = i + 1;
-            System.out.println(i+" "+bag.getItem());
+        int goldTemp=player.getGold();
+        if(goldTemp>=200){
+        System.out.println(player.getUserName()+ " ran Away and Lost 200 Gold");
+        player.setGold((goldTemp-200));
+        }else{
+            System.out.println("Money not sufficient for run. Game Over. Thank you for Playing");
+            System.exit(0);
         }
-        System.out.println("Gold : " + player.getGold());
+        
     }
-    
     
 }
