@@ -17,7 +17,7 @@ import java.util.Scanner;
 public abstract class GameCommand {
     protected String[] items = new String[]{"Gun","Diamond","Pencil","enemy","Rock","Toy","Gold"};
     Scanner input = new Scanner(System.in);
-    public abstract void execute(Player player, String[] tokens,ArrayList<Bag> itemList);
+    public abstract void execute(Player player, String[] tokens);
     
     
 }

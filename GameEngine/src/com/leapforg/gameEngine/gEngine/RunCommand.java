@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class RunCommand extends GameCommand{
 
     @Override
-    public void execute(Player player, String[] tokens, ArrayList<Bag> itemList) {
+    public void execute(Player player, String[] tokens) {
         int goldTemp=player.getGold();
         if(goldTemp>=200){
         System.out.println(player.getUserName()+ " ran Away and Lost 200 Gold");

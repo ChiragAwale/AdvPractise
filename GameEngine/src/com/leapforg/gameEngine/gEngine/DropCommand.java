@@ -16,13 +16,13 @@ import java.util.ArrayList;
 public class DropCommand extends GameCommand {
 
     @Override
-    public void execute(Player player, String[] tokens, ArrayList<Bag> itemList) {
+    public void execute(Player player, String[] tokens) {
       int check = 0;
-        for (Bag b : itemList) {
+        for (Bag b : player.getBag()) {
 
             if (tokens[1].equalsIgnoreCase(b.getItem())) {
                 System.out.println(tokens[1] + " Dropped");
-                itemList.remove(b);
+                player.getBag().remove(b);
                 check = 1;
             } 
         }

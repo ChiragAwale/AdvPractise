@@ -5,6 +5,9 @@
  */
 package com.leapforg.gameEngine.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author chira
@@ -12,6 +15,7 @@ package com.leapforg.gameEngine.entity;
 public class Player {
     private String userName;
     private int gold;
+    private List<Bag> bag=new ArrayList<>();
 
     public int getGold() {
         return gold;
@@ -40,6 +44,15 @@ public class Player {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
+    public List<Bag> getBag() {
+        return bag;
+    }
+
+    public void setBag(List<Bag> bag) {
+        this.bag = bag;
+    }
+    
     
     
 }

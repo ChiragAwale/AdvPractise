@@ -27,7 +27,7 @@ public class Program {
      */
     public static void main(String[] args) {
         menu();
-        ArrayList<Bag> itemList = new ArrayList<>();
+        
        try{
         
         
@@ -48,7 +48,7 @@ public class Program {
            
            
            if(gc!=null){
-               gc.execute(player, tokens,itemList);
+               gc.execute(player, tokens);
            }
            else{
                System.out.println("The command you entered is " + tokens[0]);

@@ -17,7 +17,7 @@ import java.util.Random;
 public class MoveCommand extends GameCommand {
 
     @Override
-    public void execute(Player player, String[] tokens,ArrayList<Bag> itemList) {
+    public void execute(Player player, String[] tokens) {
         if(tokens.length==2){
         if (tokens[1].equalsIgnoreCase("left") || tokens[1].equalsIgnoreCase("right") || tokens[1].equalsIgnoreCase("forward") || tokens[1].equalsIgnoreCase("back")) {
             System.out.println(player.getUserName() + " moved " + tokens[1]);

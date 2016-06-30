@@ -16,12 +16,12 @@ import java.util.ArrayList;
 public class PickCommand extends GameCommand {
 
     @Override
-    public void execute(Player player, String[] tokens, ArrayList<Bag> itemList) {
+    public void execute(Player player, String[] tokens) {
         if (tokens.length == 2) {
-            if ((itemList.size()) <= 2) {
+            if ((player.getBag().size()) <= 2) {
                 Bag bag = new Bag();
                 bag.setItem(tokens[1]);
-                itemList.add(bag);
+                player.getBag().add(bag);
                 System.out.println(tokens[1] + " added to bag");
 
             } else {

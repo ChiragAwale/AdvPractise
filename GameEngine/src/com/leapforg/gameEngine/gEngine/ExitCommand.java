@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class ExitCommand extends GameCommand{
 
     @Override
-    public void execute(Player player, String[] tokens, ArrayList<Bag> itemList) {
+    public void execute(Player player, String[] tokens) {
         System.exit(0);
     }
     

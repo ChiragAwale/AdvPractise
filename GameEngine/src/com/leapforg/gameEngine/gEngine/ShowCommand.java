@@ -16,10 +16,10 @@ import java.util.ArrayList;
 public class ShowCommand extends GameCommand {
 
     @Override
-    public void execute(Player player, String[] tokens, ArrayList<Bag> itemList) {
+    public void execute(Player player, String[] tokens) {
         System.out.println("Your Bag Contains Following Objects");
         int i = 0;
-        for(Bag bag: itemList){
+        for(Bag bag: player.getBag()){
             i = i + 1;
             System.out.println(i+" "+bag.getItem());
         }

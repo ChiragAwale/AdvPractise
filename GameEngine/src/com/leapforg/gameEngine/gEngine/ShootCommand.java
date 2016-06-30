@@ -16,9 +16,9 @@ import java.util.ArrayList;
 public class ShootCommand extends GameCommand {
 
     @Override
-    public void execute(Player player, String[] tokens, ArrayList<Bag> itemList) {
+    public void execute(Player player, String[] tokens) {
         int checkGun = 0;
-        for(Bag bag: itemList){
+        for(Bag bag: player.getBag()){
             if(bag.getItem().equalsIgnoreCase("gun")){
                 checkGun = 1;
             }
